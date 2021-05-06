@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 26px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-shadow: 1px 1px 2px gray;
+}
+
+body {
+    background-color: #F5F1EE; 
+    min-height: 100vh;
+}
+
+/* 투두리스트 div 컨테이너 */
+.main-container {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* 투두리스트 미니헤더 */
+.list {
+    border-radius: 5px;
+}
+.a-header {
+    background-color: red;
+}
+.b-header {
+    background-color: orange;
+}
+.c-header {
+    background-color: green;
+}
