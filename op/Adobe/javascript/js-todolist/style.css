@@ -7,17 +7,48 @@
     overflow: hidden;
     font-size: 26px;
     font-family: 'Noto Sans KR', sans-serif;
-    text-shadow: 1px 1px 2px gray;
+    
 }
 
 body {
     background-color: #F5F1EE; 
     min-height: 100vh;
+    display: flex;
 }
 
+/* 할일 추가 컨테이너 */
+.submit-container {
+    display: flex;
+    justify-content: center;
+}
+
+.writeToDoBtn {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transition: transform 0.5s ease-in-out;
+    outline: none;
+}
+.writeToDoBtn.active {
+    transform: translateX(100px);
+}
+
+.writeToDo {
+    position: absolute;
+    top: 17px;
+    left: 32.5%;
+    width: 300px;
+    height: 30px; 
+    transform: translateY(-200%);
+    transition: transform 0.5s ease-in-out;
+}
+.writeToDo.active {
+    transform: translateY(0);
+}
+
+
 /* 투두리스트 div 컨테이너 */
-.main-container {
-    margin-top: 10rem;
+.container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -27,14 +58,16 @@ body {
 
 /* 투두리스트 미니헤더 */
 .list {
-    border-radius: 5px;
+    border-radius: 10px;
+    padding: 0px 20px 4px;
+    text-shadow: 1px 1px 2px gray;
 }
-.a-header {
+.a-list {
     background-color: red;
 }
-.b-header {
+.b-list {
     background-color: orange;
 }
-.c-header {
+.c-list {
     background-color: green;
 }
