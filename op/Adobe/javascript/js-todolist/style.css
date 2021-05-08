@@ -5,69 +5,80 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-size: 26px;
+    font-size: 16px;
     font-family: 'Noto Sans KR', sans-serif;
     
 }
 
 body {
-    background-color: #F5F1EE; 
+    background: url('https://source.unsplash.com/1600x900/?chill');
     min-height: 100vh;
-    display: flex;
 }
 
 /* 할일 추가 컨테이너 */
 .submit-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 50px;
 }
 
-.writeToDoBtn {
-    position: fixed;
-    top: 15px;
-    left: 50%;
-    transition: transform 0.5s ease-in-out;
-    outline: none;
-}
-.writeToDoBtn.active {
-    transform: translateX(100px);
-}
-
-.writeToDo {
-    position: absolute;
-    top: 17px;
-    left: 32.5%;
+#writeToDo {    
     width: 300px;
-    height: 30px; 
-    transform: translateY(-200%);
-    transition: transform 0.5s ease-in-out;
+    height: 50px;
+    font-size: 20px; 
+    text-align: center;
+    border: none;
+    border-bottom: solid 25px rgba(0, 0, 0, 0.5);
+    outline: none;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.2),
+        rgba(255,255, 255, 0.05));
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5),
+    -1px -1px 2px #aaa, 1px 1px 2px #555;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(0.8rem);
+    letter-spacing: 1px;
 }
-.writeToDo.active {
-    transform: translateY(0);
-}
-
 
 /* 투두리스트 div 컨테이너 */
 .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.2),
+        rgba(255,255, 255, 0.05));
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5),
+        -1px -1px 2px #aaa, 1px 1px 2px #555;
+    backdrop-filter: blur(0.8rem);
+    border-radius: 5px;
+    padding-top: 1rem;
     letter-spacing: 1px;
     color: #fff;
 }
 
 /* 투두리스트 미니헤더 */
-.list {
-    border-radius: 10px;
-    padding: 0px 20px 4px;
+h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-shadow: 1px 1px 2px gray;
 }
-.a-list {
+.a-title {
     background-color: red;
+    border-radius: 10px;
+    padding: 0px 20px 4px;
 }
-.b-list {
+.b-title {
     background-color: orange;
+    border-radius: 10px;
+    padding: 0px 20px 4px;
 }
-.c-list {
+.c-title {
     background-color: green;
+    border-radius: 10px;
+    padding: 0px 20px 4px;
 }

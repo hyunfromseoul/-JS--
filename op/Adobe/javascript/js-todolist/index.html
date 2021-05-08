@@ -11,27 +11,28 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <button class="btn btn-default writeToDoBtn">✏️</button>
     <div class="submit-container">
-        <input type="text" class="writeToDo"/>
+        <form class="toDoForm">
+            <input placeholder="오늘의 할 일을 적어보세요" type="text" id="writeToDo"/>
+        </form>
     </div>
+    
 
     <div class="container">
-        <ul class="a-list list">
-            <li class="a-column column">
-                <h2>할 일</h2>    
-            </li>
-        </ul>
-        <ul class="b-list list">
-            <li class="b-column column">
-                <h2>진행 중</h2>
-            </li>
-        </ul>
-        <ul class="c-list list">
-            <li class="c-column column">
-                <h2>완료🙌</h2>    
-            </li>
-        </ul>
+        <div class="a-container">
+            <h2 class="a-title">할 일</h2>    
+            <ul class="a-list list"></ul>
+        </div>
+
+        <div class="b-container">
+            <h2 class="b-title">진행 중</h2>
+            <ul class="b-list list"></ul>
+        </div>
+
+        <div class="c-container">
+            <h2 class="c-title">완료🙌</h2>    
+            <ul class="c-list list"></ul>
+        </div>
     </div>
 
 </body>
