@@ -1,37 +1,35 @@
-// writeToDo 인풋
-const writeToDo = document.getElementById('writeToDo'),
-    toDoForm = document.querySelector('.toDoForm'),
-// task 리스트
+const toDoInput = document.getElementById('writeToDo'),
+    toDoBtn = document.querySelector('.button'),
     aList = document.querySelector('.a-list'),
     bList = document.querySelector('.b-list'),
     cList = document.querySelector('.c-list'),
-    list = document.querySelector('.list'),
-    aColumn = document.querySelector('.a-column'),
-    bColumn = document.querySelector('.b-column'),
-    cColumn = document.querySelector('.c-column'),
-    column = document.querySelector('.column')
+    abcList = document.querySelector('.list')
 
-// hello
 
-function handleSubmit(e){
-    e.preventDefault()
-    const currentValue = writeToDo.value
-    paintToDo(currentValue)
+toDoBtn.addEventListener('click', writeList)
+
+function writeList(event) {
+    // form 에서 submit되어서 자동새로고침되는거 없애기
+    event.preventDefault()
+    // div 만들기
+    if (toDoInput.value !== "") {
+        const toDoDiv = document.createElement("div")
+        toDoDiv.classList.add("item-container")
+        // li만들기
+        const toDoLi = document.createElement("li")
+        toDoLi.innerText = toDoInput.value
+        toDoLi.classList.add('item')
+        toDoDiv.appendChild(toDoLi)
+        // 지우기버튼
+        const deleteBtn = document.createElement('button')
+        deleteBtn.innerText = '✖️'
+        deleteBtn.classList.add('delete-btn')
+        toDoDiv.appendChild(deleteBtn)
+    
+        aList.appendChild(toDoDiv)
+        toDoInput.value = ""
+    } else {
+        alert("입력칸을 채워주세요") 
+        // change toast notification to this line 
+    }
 }
-
-function paintToDo(text){
-    const li = document.createElement("li")
-    const delBtn = document.createElement("button")
-    delBtn.innerText = "X"
-    const span = document.createElement("span")
-    span.innerText = text
-    li.appendChild(span)
-    li.appendChild(delBtn)
-    aList.appendChild(li)
-}
-
-function init() {
-    toDoForm.addEventListener("submit", handleSubmit)
-}
-
-init()

@@ -12,27 +12,29 @@
 </head>
 <body>
     <div class="submit-container">
-        <form class="toDoForm">
-            <input placeholder="오늘의 할 일을 적어보세요" type="text" id="writeToDo"/>
+        <h1>TO DO LIST</h1>
+        <form class="todo-form">
+            <input placeholder="*UCKING WRITE NOW" type="text" id="writeToDo"/>
+            <button class="button" type="submit">✔️</button>
         </form>
     </div>
     
 
-    <div class="container">
-        <div class="a-container">
-            <h2 class="a-title">할 일</h2>    
+    <div class="container" id="container">
+        <div class="a-container abc-container">
+            <h2 class="a-title title">TODO</h2>    
             <ul class="a-list list"></ul>
         </div>
-
-        <div class="b-container">
-            <h2 class="b-title">진행 중</h2>
+        <div class="b-container abc-container">
+            <h2 class="b-title title">DOING</h2>
             <ul class="b-list list"></ul>
         </div>
-
-        <div class="c-container">
-            <h2 class="c-title">완료🙌</h2>    
+        <div class="c-container abc-container">
+            <h2 class="c-title title">DONE</h2>    
             <ul class="c-list list"></ul>
         </div>
+
+
     </div>
 
 </body>
