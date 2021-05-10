@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive;
-    transition: all 0.7s ease;
 }
 
 body {
@@ -13,6 +12,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+h1 { 
+    text-align: center;
 }
 
 h1:hover {
@@ -31,7 +33,7 @@ h1:hover {
     position: relative;
     display: flex;
     text-align: center;
-    width: 80vw;
+    width: 90vw;
     height: auto;
     padding-top: 50px;
     padding: 15px 30px;
@@ -52,10 +54,11 @@ h1:hover {
     border: none;
     outline: none;
     text-align: center;
+    transition: 0.5s ease;
 }
 
 #writeToDo {
-    width: 50vw;
+    width: 70vw;
 }
 
 #writeToDo::placeholder {
@@ -85,12 +88,16 @@ h1:hover {
 }
 
 .list .item-container .item {
+    position: relative;
     padding: 5px;
     width: 90%;
+    font-size: 20px;
 }
 
 .list .item-container .delete-btn {
+    position: relative;
     padding: 5px;
+    right: 10px;
     outline: none;
     border: none;
     background-color:transparent;
@@ -98,12 +105,21 @@ h1:hover {
     font-size: 20px;
     height: auto;
     text-align: center;
+    transition: 0.5s ease;
 }
-.list .item-container .item:hover, .list .item-container .delete-btn:hover {
+.item-container:hover {
     background-color: tomato;
-    border-radius: 2px;
+    border-radius: 5px;
     color: #fff;
 }
+
+.delete-btn::before {
+    content:'✖️';
+}
+
+.delete-btn:hover::before {
+    content: "❌";
+  }
 
 /* item-container 안에서 .item이 2줄로 자동 줄바꿈처리 word-~~ */
 .list .item-container .item, .list .item-container .delete-btn {
@@ -130,22 +146,47 @@ h1:hover {
     width: 100%;
     margin: 0;
     cursor: default;
+    transition: 0.5s ease;
 }
 
-@media only screen and (max-width: 768px) {
-    #writeToDo {
-        width: 50vw;
+@media (max-width: 768px) {
+    
+    #writeToDo, .button, h1, .title, .list .item-container .item, .list .item-container .delete-btn {
+        font-size: 15px;
+    }
+
+    .submit-container .button {
+        visibility: hidden;
+        display: none;
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
+   * {
+       transition: none;
+   }
+
+   h1:hover {
+       transform: none;
+   }
     .container {
         flex-direction: column;
         width: 90vw;
         align-items: center;
     }
 
-    .a-container, .b-container, .c-container {
+    #writeToDo {
+        width: 90vw;
+    }
+    #writeToDo, .button, h1, .title, .list .item-container .item, .list .item-container .delete-btn {
+        font-size: 5px;
+    }
+    .button {
+        visibility: hidden;
+        display: none;
+    }
+
+    .abc-container {
         width: 100%;
         height: auto;
     }
