@@ -8,6 +8,17 @@ const toDoInput = document.getElementById('writeToDo'),
     item = document.querySelectorAll('.item'),
     itemContainer = document.querySelectorAll('.item-container')
 
+    itemContainer.forEach((items) => {
+        items.addEventListener('dragstart', () => {
+            items.classList.add('dragging')
+            console.log('add')
+        })
+
+        items.addEventListener('dragend', () => {
+            items.classList.remove('dragging')
+            console.log('remove')
+        })
+    });
     
 
     toDoBtn.addEventListener('click', writeItem)

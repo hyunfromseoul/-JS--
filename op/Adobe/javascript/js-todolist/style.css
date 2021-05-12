@@ -87,6 +87,7 @@ h1:hover {
     justify-content: center;
 }
 
+/* 투두내용 */
 .list .item-container .item {
     position: relative;
     padding: 5px;
@@ -94,6 +95,7 @@ h1:hover {
     font-size: 20px;
 }
 
+/* 지우기 */
 .list .item-container .delete-btn {
     position: relative;
     padding: 5px;
