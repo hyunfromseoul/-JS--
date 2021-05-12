@@ -74,36 +74,29 @@ h1:hover {
     background: tomato;
 }
 
-.list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.list .item-container {
+.item-container {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* 투두내용 */
-.list .item-container .item {
     position: relative;
     padding: 5px;
-    width: 90%;
+    width: auto;
     font-size: 20px;
 }
 
+/* 투두내용 */
+/* .item-container .item {
+    
+} */
+
 /* 지우기 */
-.list .item-container .delete-btn {
-    position: relative;
+.item-container .delete-btn {
     padding: 5px;
-    right: 10px;
+    top: auto;
+    right: 1px;
     outline: none;
     border: none;
     background-color:transparent;
-    width: 10%;
     font-size: 20px;
     height: auto;
     text-align: center;
@@ -124,11 +117,15 @@ h1:hover {
   }
 
 /* item-container 안에서 .item이 2줄로 자동 줄바꿈처리 word-~~ */
-.list .item-container .item, .list .item-container .delete-btn {
+.item-container, .item-container .delete-btn {
     margin: 10px 0px;
     cursor: pointer;
     word-break: break-all;
     word-wrap: break-word;
+}
+/* dragover인 상태의 .item-container 색상 변경 */
+.styling:hover {
+    border-bottom: 5px solid black;
 }
 
 .abc-container {
@@ -153,7 +150,7 @@ h1:hover {
 
 @media (max-width: 768px) {
     
-    #writeToDo, .button, h1, .title, .list .item-container .item, .list .item-container .delete-btn {
+    #writeToDo, .button, h1, .title, .item-container .item, .item-container .delete-btn {
         font-size: 15px;
     }
 
@@ -180,7 +177,7 @@ h1:hover {
     #writeToDo {
         width: 90vw;
     }
-    #writeToDo, .button, h1, .title, .list .item-container .item, .list .item-container .delete-btn {
+    #writeToDo, .button, h1, .title, .item-container .item, .item-container .delete-btn {
         font-size: 5px;
     }
     .button {
