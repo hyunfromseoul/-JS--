@@ -13,9 +13,11 @@ container.addEventListener("mousedown", () => {
     
     itemContainer.forEach((item) => {
         // 지우기 기능
-        const delBtn = document.querySelector('.delete-btn')
-        delBtn.addEventListener('click', (e) => {
-            delBtn.parentNode.remove()
+        const delBtn = document.querySelectorAll('.delete-btn')
+        delBtn.forEach((del) => {
+            del.addEventListener('click', (e) => {
+                del.parentNode.remove()
+            })
         })
 
         // 드래그 기능
