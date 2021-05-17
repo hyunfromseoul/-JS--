@@ -9,18 +9,31 @@ const toDoInput = document.getElementById('writeToDo'),
 
 
 container.addEventListener("mousedown", () => {
-    // console.log('container가 클릭이 됌')
-    // console.log(container)
-
-    let itemContainer = document.querySelectorAll('.item-container');
+    const itemContainer = document.querySelectorAll('.item-container')
     
     itemContainer.forEach((item) => {
+        // 지우기 기능
+        const delBtn = document.querySelector('.delete-btn')
+        delBtn.addEventListener('click', (e) => {
+            delBtn.parentNode.remove()
+        })
+
+        // 드래그 기능
         item.addEventListener("dragstart", () => {
             item.classList.add('dragging')
         })
-
         item.addEventListener("dragend", () => {
             item.classList.remove('dragging')
+        })
+
+        item.addEventListener('dragenter', () => {
+            item.classList.add('drag-over')
+        })
+        item.addEventListener('dragleave', () => {
+            item.classList.remove('drag-over')
+        })
+        item.addEventListener('drop', () => {
+            item.classList.remove('drag-over')
         })
     })
 
@@ -30,12 +43,8 @@ container.addEventListener("mousedown", () => {
             const draggable = document.querySelector('.dragging')
             con.appendChild(draggable)
         })
-
-        con.addEventListener('drop', e => {
-        })
     })
 })
-
 
 
 
@@ -62,6 +71,7 @@ function writeItem(event) {
         // 지우기버튼
         const deleteBtn = document.createElement('button')
         deleteBtn.classList.add('delete-btn')
+        deleteBtn.innerText = '❌'
         toDoDiv.appendChild(deleteBtn)
         aContainer.appendChild(toDoDiv)
         toDoDiv.setAttribute('draggable', 'true')

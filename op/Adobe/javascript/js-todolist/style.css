@@ -108,13 +108,14 @@ h1:hover {
     color: #fff;
 }
 
-.delete-btn::before {
-    content:'✖️';
+.delete-btn {
+    transition: transform 0.3s ease;
+}
+.delete-btn:hover {
+    transform: scale(1.02);
 }
 
-.delete-btn:hover::before {
-    content: "❌";
-  }
+
 
 /* item-container 안에서 .item이 2줄로 자동 줄바꿈처리 word-~~ */
 .item-container, .item-container .delete-btn {
@@ -136,6 +137,12 @@ h1:hover {
 
 .abc-container .title:hover {
     background: tomato;
+}
+
+.drag-over {
+    background: tomato;
+    color: #fff;
+    border: 2px dashed steelblue;
 }
 
 .abc-container .title {
