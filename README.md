@@ -1,4 +1,4 @@
-# JS만을 이용한 투두리스트 ver.1.5
+# 바닐라 JS 투두리스트 ver.1.5
 
 https://zealous-benz-df03ba.netlify.app/
 
