@@ -7,3 +7,7 @@ https://zealous-benz-df03ba.netlify.app/
 1. 3 COLUMN 드래그 & 드랍 기능
 2. TO DO LIST 기초 CRUD
 3. 레트로틱 디자인
+
+-기능 시연
+![TODO-1](https://user-images.githubusercontent.com/76645966/161499808-731878fd-416d-4fc6-87bf-35fd0db5b4c1.gif)
+![TODO-2](https://user-images.githubusercontent.com/76645966/161499825-13c29663-1dca-4c9e-9fe0-a0e819038670.gif)
